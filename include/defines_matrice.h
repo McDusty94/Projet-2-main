@@ -40,6 +40,10 @@
 #define BTN_GAUCHE PC1
 #define BTN_DROITE PC3 
 
+// Delimitation de la longueur et de la hauteur de la matrice
+#define LARGEUR_MATRICE 64
+#define HAUTEUR_MATRICE 32
+
 // Broche de l'encodeur rotatif
 #define BTN_ENC PG5
 
@@ -48,6 +52,6 @@
 
 enum Boutons {HAUT, BAS, GAUCHE, DROITE,BOUTA, BOUTB, BOUTC, BTNENC};
 
-MOMO_RGB_Matrix matrix;
+
 
 #endif
