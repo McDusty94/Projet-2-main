@@ -119,9 +119,20 @@ void titre()
 
   if (!isBitSet(PINC, BTN_C))
   {
+    Serial.println("Bouton C appuyé");
     etatActuel = ETAT_JEU;
     matrix.fillScreen(matrix.Color333(0, 0, 0));
   }
+}
+
+void jeu()
+{
+  //Delimitation des zones de parcours, en haut et en bas en mauve
+
+  matrix.drawRect(0, 9, 64, 6, (matrix.Color888(255, 150, 0)));   // Haut
+  matrix.fillRect(1, 10, 62, 4, (matrix.Color888(255, 0, 100)));
+  matrix.drawRect(0, 26, 64, 6, (matrix.Color888(255, 150, 0))); // Bas
+  matrix.fillRect(1, 27, 62, 4, (matrix.Color888(255, 0, 100)));
 }
 
 void setup()
@@ -153,9 +164,9 @@ void loop()
     titre();
     break;
 
-  //case ETAT_JEU:
-    // jeu();
-    // break;
+  case ETAT_JEU:
+     jeu();
+     break;
 
     // case ETAT_GAMEOVER:
     // gameOver();
